@@ -11,7 +11,7 @@ import {
 const router = Router();
 
 router.get("/", listProperties);
-router.get("/:id", getProperty);
+router.get("/:id", requireAuth, getProperty);
 router.post("/", requireAuth, createProperty);
 router.patch("/:id", requireAuth, updateProperty);
 router.delete("/:id", requireAuth, deleteProperty);
